@@ -14,11 +14,11 @@ echo "<table align=center>";
 for($i=0; $i<count(scandir($_POST['path'])); $i++){
 if(is_dir($_POST['path']."/".scandir($_POST['path'])[$i])){
  //  echo "$file è una cartella</br>";
-    echo "<tr><th><a href=ardizzone.pietro.tave.osdb.it/".$_POST['path']."/".scandir($_POST['path'])[$i].">".scandir($_POST['path'])[$i]."</a> è una cartella</th></tr>";
+    echo "<tr><th>DIR <a href=ardizzone.pietro.tave.osdb.it/".$_POST['path']."/".scandir($_POST['path'])[$i].">".scandir($_POST['path'])[$i]."</a></th></tr>";
 }else{
     
     //echo "$file è un file</br>";
-    echo "<tr><th><a href=".$_POST['path']."/".scandir($_POST['path'])[$i].">".scandir($_POST['path'])[$i]."</a> è un file</th></tr>";
+    echo "<tr><th><a href=".$_POST['path']."/".scandir($_POST['path'])[$i].">".scandir($_POST['path'])[$i]."</a></th></tr>";
 }
 }
 
