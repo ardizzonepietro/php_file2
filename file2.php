@@ -7,15 +7,15 @@ dimmi un path: <input type = text name=path>
 </form>
 ';
 if(!empty($_POST['path'])){
-$hn = opendir($_POST['path']);
-while($file = readdir($hn)){
-if(is_dir($_POST['path']."/".$file)){
+$content[] = scandir($_POST['path']);
+for($i=0; $i<count(scandir($_POST['path'])); $i++){
+if(is_dir($_POST['path']."/".scandir($_POST['path'])[$i])){
  //  echo "$file è una cartella</br>";
-    echo "<a href=ardizzone.pietro.tave.osdb.it/".$_POST['path']."/".$file.">".$file."</a> è una cartella</br>";
+    echo "<a href=ardizzone.pietro.tave.osdb.it/".$_POST['path']."/".scandir($_POST['path'])[$i].">".scandir($_POST['path'])[$i]."</a> è una cartella</br>";
 }else{
     
     //echo "$file è un file</br>";
-    echo "<a href=".$_POST['path']."/".$file.">".$file."</a> è un file</br>";
+    echo "<a href=".$_POST['path']."/".scandir($_POST['path'])[$i].">".scandir($_POST['path'])[$i]."</a> è un file</br>";
 }
 }
 closedir($hn);
